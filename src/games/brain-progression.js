@@ -1,6 +1,6 @@
-import playGame2 from '../src/index.js';
+import playGame2 from '../index.js';
+import getRandomNumber from '../rand.js';
 
-const rand = (min, max) => Math.floor(Math.random() * (max - min) + min);
 const progressionSize = 10;
 
 const makeProgression = (start, diff) => {
@@ -14,11 +14,11 @@ const makeProgression = (start, diff) => {
 };
 
 const createQuestionAndAnswer = () => {
-  const start = rand(0, 100);
-  const diff = rand(1, 10);
+  const start = getRandomNumber(0, 100);
+  const diff = getRandomNumber(1, 10);
   const progression = makeProgression(start, diff);
 
-  let answer = progression[rand(0, progression.length)];
+  let answer = progression[getRandomNumber(0, progression.length)];
   progression[progression.indexOf(answer)] = '..';
 
   const question = progression.join(' ');

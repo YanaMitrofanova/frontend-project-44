@@ -1,6 +1,6 @@
-import playGame2 from '../src/index.js';
+import playGame2 from '../index.js';
+import getRandomNumber from '../rand.js';
 
-const rand = (min, max) => Math.floor(Math.random() * (max - min) + min);
 const isPrime = (num) => {
   if (num < 2) return false;
   if (num === 2) return true;
@@ -13,7 +13,7 @@ const isPrime = (num) => {
 };
 
 const createQuestionAndAnswer = () => {
-  const question = rand(0, 100);
+  const question = getRandomNumber(0, 100);
   const answer = isPrime(question) ? 'yes' : 'no';
 
   return { question, answer };

@@ -1,7 +1,7 @@
-import playGame2 from '../src/index.js';
+import playGame2 from '../index.js';
+import getRandomNumber from '../rand.js';
 
 const operators = ['+', '-', '*'];
-const rand = (min, max) => Math.floor(Math.random() * (max - min) + min);
 
 const calculate = (num1, num2, operator) => {
   let result;
@@ -24,9 +24,9 @@ const calculate = (num1, num2, operator) => {
 };
 
 const createQuestionAndAnswer = () => {
-  const num1 = rand(0, 10);
-  const num2 = rand(0, 10);
-  const operator = operators[rand(0, operators.length)];
+  const num1 = getRandomNumber(0, 10);
+  const num2 = getRandomNumber(0, 10);
+  const operator = operators[getRandomNumber(0, operators.length)];
 
   const question = `${num1} ${operator} ${num2}`;
   const answer = calculate(num1, num2, operator).toString();

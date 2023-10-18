@@ -1,6 +1,6 @@
-import playGame2 from '../src/index.js';
+import playGame2 from '../index.js';
+import getRandomNumber from '../rand.js';
 
-const rand = (min, max) => Math.floor(Math.random() * (max - min) + min);
 const evalGcd = (num1, num2) => {
   let a = num1;
   let b = num2;
@@ -17,8 +17,8 @@ const evalGcd = (num1, num2) => {
 };
 
 const createQuestionAndAnswer = () => {
-  const num1 = rand(0, 100);
-  const num2 = rand(0, 100);
+  const num1 = getRandomNumber(0, 100);
+  const num2 = getRandomNumber(0, 100);
 
   const question = `${num1} ${num2}`;
   const answer = evalGcd(num1, num2).toString();
